@@ -13,9 +13,14 @@
 
 <!-- start -->
 <script type="text/babel">
-        ReactDOM.render(
-            <div>
-              <h1>SSD 4 Modules table </h1>
+
+      var Modules = React.createClass({
+        render: function() {
+          // body...
+          return (
+            <div createClass='myCSSstyle'>
+
+             <h1>SSD 4 Modules table </h1>
                  <table className="table table-bordered">
                    <thead>
                       <tr>
@@ -37,9 +42,15 @@
                       </tr>
                   </tbody >
             </table>
-            </div>,
-      document.getElementById('mount-point')
-  );
+
+
+            </div>
+            );
+        }
+      });
+         ReactDOM.render(
+          <Modules/>, document.getElementById('mount-point')
+      );
     </script>
 
 
