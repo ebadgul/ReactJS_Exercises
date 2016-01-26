@@ -14,42 +14,56 @@
 <!-- start -->
 <script type="text/babel">
 
-      var Modules = React.createClass({
-        render: function(){
- 
-               var modules = ['Name', 'No lectures', "No practicls"] ;
+   var Subjects = React.createClass({
+          render: function(){
               return (
                <div className='myCSSstyle' >
-                   <h2>SSD 4 MOdueles table</h2>
-                   <table className="table table-bordered">
-                   <thead>
-                   <tr>
-                     <th>{modules[0]} </th>
-                     <th>{modules[1]} </th>
-                     <th>{modules[2]} </th>
-                   </tr>  
-                   </thead>
-                   <tbody>
-                     <tr >
-                        <td>Software Frameworks</td>
-                        <td>3</td>
-                        <td>2</td>
-                      </tr>
-                      <tr >
-                        <td>Dynamic web Developmnt</td>
-                        <td>3</td>
-                        <td>3</td>
-                      </tr>
-                   </tbody>   
-                   </table>
-
+                 <h1>SSD 4 Modules table </h1>
+                  <table className="table table-bordered">
+                  <thead>
+                  <tr>
+                  <th>{this.props.course}</th>
+                   <th>{this.props.lec}</th>
+                   <th>{this.props.prac}</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>{this.props.subjects[0].name}</td>
+                    <td>{this.props.subjects[0].noLectures}</td>
+                    <td>{this.props.subjects[0].noPracticals}</td>
+                  </tr>
+                 <tr>
+                <td>{this.props.subjects[1].name} </td>
+                <td>{this.props.subjects[0].noLectures}</td>
+                <td>{this.props.subjects[0].noPracticals}</td>
+                 </tr>
+                  </tbody>
+                   </table>                                  
                 </div>
               );
           }
       });
-      ReactDOM.render(       
-         <Modules/>, document.getElementById('mount-point')
-      );
+      
+         
+
+
+        var subjectList = [
+             {name: 'Software Frameworks', noLectures: 3, noPracticals: 2},
+             {name: 'Dynamic web Developmnt', noLectures: 3, noPracticals: 2}
+          ];
+    var name = 'Name';
+    var noL = 'No Lectures'
+    var noS = 'No Practicals'
+
+    ReactDOM.render(<Subjects subjects={subjectList} course={name} lec={noL} prac={noS} />,
+           document.getElementById('mount-point')
+           );
+
+
+
+    
+           
 
 
     </script>
