@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-   <link href="../common/bootstrap.min.css" rel="stylesheet">
-  </head>
-  <body>
-    <div id="mount-point"></div>
-      <script src="./node_modules/react/dist/react.js"></script>
-      <script src="./node_modules/react-dom/dist/react-dom.js"></script>
-      <script src="./common/babel-core_5.8.24_browser.min.js"></script>
+var ReactDOM = require('react-dom')
+    var React = require('react')
 
-      <div id="content"></div>
 
-<!-- start -->
-<script type="text/babel">
-
-    var Subjects = React.createClass({
+     var Subjects = React.createClass({
         render: function(){
             var list = this.props.subjects.map(function(subject, index){
                   return (
@@ -47,24 +35,9 @@
 
     var subjectList = [
                {name: 'Software Frameworks', noLectures: 3, noPracticals: 2},
-               {name: 'Dynamic web Developmnt', noLectures: 3, noPracticals: 2},
-               {name: 'Project', noLectures: 3, noPracticals: 2},
-               {name: 'Database Administration', noLectures: 3, noPracticals: 2}
+               {name: 'Dynamic web Developmnt', noLectures: 3, noPracticals: 2}
             ] ;
     var name = 'SSD 4' ;
     ReactDOM.render(<Subjects subjects={subjectList} course={name} />,
         document.getElementById('mount-point')
     );
-
-
-
-    
-           
-
-
-    </script>
-
-
-<!-- end -->
-  </body>
-</html>
